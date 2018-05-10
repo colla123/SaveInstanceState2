@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     int mCounter = 1;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState != null){
             mCounter = savedInstanceState.getInt("MyCounter");
-
         } else {
             mCounter = 0;
         }
