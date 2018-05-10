@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +26,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final TextView no =  findViewById(R.id.txt_counter);
+        final Button reset = findViewById(R.id.btn_reset);
+
         no.setText(String.valueOf(mCounter));
 
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mCounter = mCounter + 1;
+                no.setText(String.valueOf(mCounter));
+            }
+        });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCounter = 0;
                 no.setText(String.valueOf(mCounter));
             }
         });
