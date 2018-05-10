@@ -10,8 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     int mCounter = 1;
-
-
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +33,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mCounter = mCounter + 1;
                 no.setText(String.valueOf(mCounter));
-
             }
         });
-
     }
 
     @Override
@@ -90,7 +87,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity is Save Instance State", Toast.LENGTH_SHORT).show();
         Log.v("MainActivity", "onSaveInstanceState");
         outState.putInt("MyCounter", mCounter);
+    }
 
-
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Toast.makeText(this, "Activity is Restore Instance State", Toast.LENGTH_SHORT).show();
+        Log.v("MainActivity", "onRestoreInstanceState");
     }
 }
